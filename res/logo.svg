@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#33bef0"/>
+      <stop offset="1" stop-color="#0a85d9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circle background (matches original Telegram icon shape) -->
+  <circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+
+  <!-- 3 ascending bar chart columns, baseline at y=48, 14px inset from each edge -->
+  <rect x="15" y="40" width="8" height="8"  rx="2" fill="white" opacity="0.9"/>
+  <rect x="28" y="30" width="8" height="18" rx="2" fill="white" opacity="0.9"/>
+  <rect x="41" y="17" width="8" height="31" rx="2" fill="white" opacity="0.9"/>
+
+  <!-- Baseline -->
+  <line x1="13" y1="48" x2="51" y2="48" stroke="white" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Trend line connecting bar tops -->
+  <polyline points="19,40 32,30 45,17"
+    fill="none" stroke="white" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+
+  <!-- Dots at each bar top -->
+  <circle cx="19" cy="40" r="2.5" fill="white"/>
+  <circle cx="32" cy="30" r="2.5" fill="white"/>
+  <circle cx="45" cy="17" r="2.5" fill="white"/>
+</svg>
