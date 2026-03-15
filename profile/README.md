@@ -15,6 +15,35 @@ purchases, errors — whenever you ask, or automatically on a schedule.
 
 ## How it works
 
+```mermaid
+flowchart LR
+    subgraph Sources["📡 Data Sources"]
+        A["🌐 Website"]
+        B["📱 App"]
+    end
+    subgraph SDKs["📦 Client Libraries"]
+        JS["tgram-analytics-js"]
+        PY["tgram-analytics-py"]
+        SW["..."]
+    end
+    S["⚙️ tgram-analytics\nserver"]
+    T["🤖 Telegram Bot"]
+    U["😎 You"]
+    A --> JS
+    A --> PY
+    B --> SW
+    JS -- "track · pageview" --> S
+    PY -- "track · pageview" --> S
+    SW -- "track · pageview" --> S
+    S <-. "queries & reports" .-> T
+    T <-. "messages" .-> U
+    style Sources fill:#2b2b2b,stroke:#555,color:#fff
+    style SDKs fill:#2b2b2b,stroke:#555,color:#fff
+    style S fill:#0088cc,stroke:#006699,color:#fff
+    style T fill:#0088cc,stroke:#006699,color:#fff
+    style U fill:#333,stroke:#555,color:#fff
+```
+
 **1. Deploy the server once** — on a VPS, Railway, Fly.io, wherever you like.
 Everything runs on your infrastructure. Your data never leaves.
 
