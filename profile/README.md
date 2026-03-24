@@ -24,18 +24,18 @@ flowchart LR
     end
     subgraph SDKs["📦 Client Libraries"]
         JS["tgram-analytics-js"]
+        FL["tgram-analytics-flutter"]
         PY["tgram-analytics-py"]
-        SW["..."]
     end
     S["⚙️ tgram-analytics\nserver"]
     T["🤖 Telegram Bot"]
     U["😎 You"]
     A --> JS
-    B --> SW
+    B --> FL
     C --> PY
     JS -- "track · pageview" --> S
+    FL -- "track · pageview" --> S
     PY -- "track · pageview" --> S
-    SW -- "track · pageview" --> S
     S <-. "queries & reports" .-> T
     T <-. "messages" .-> U
     style Sources fill:#2b2b2b,stroke:#555,color:#fff
@@ -69,16 +69,25 @@ Use whichever clients fit your stack. Mix and match — all events land in the s
 ```
 Pageviews and SPA navigation tracked automatically.
 
-**Python backend only?**
+**Flutter / Dart app?**
+```dart
+// Track anywhere — even before init:
+TGA.track('signup', sessionId);
+
+// In main():
+TGA.init('proj_xxx', 'https://your-server.com');
+// ^ buffered events flush automatically
+```
+
+**Python backend?**
 ```python
 from tgram_analytics import TGA
 
 tga = TGA("proj_xxx", "https://your-server.com")
 tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"})
 ```
-Track server-side events like payments, signups, or job completions.
 
-**Full-stack app?** Use both — JS SDK on the frontend for pageviews and clicks, Python SDK on the backend for purchases and background jobs. All events flow into the same project and show up in the same `/report`.
+**Full-stack app?** Mix and match — JS on the frontend, Flutter in the app, Python on the backend. All events flow into the same project and show up in the same `/report`.
 
 ---
 
@@ -91,14 +100,46 @@ Track server-side events like payments, signups, or job completions.
 
 ---
 
+## Pick your SDK
+
+Use whichever clients fit your stack. Mix and match — all events land in the same project.
+
+**Just a website?**
+```html
+<!-- one script tag, done -->
+<script src="dist/tga.min.js"></script>
+<script>TGA.init("proj_xxx", { serverUrl: "https://your-server.com" });</script>
+```
+Pageviews and SPA navigation tracked automatically.
+
+**Flutter / Dart app?**
+```dart
+// Track anywhere — even before init:
+TGA.track('signup', sessionId);
+
+// In main():
+TGA.init('proj_xxx', 'https://your-server.com');
+// ^ buffered events flush automatically
+```
+
+**Python backend?**
+```python
+from tgram_analytics import TGA
+
+tga = TGA("proj_xxx", "https://your-server.com")
+tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"})
+```
+
+---
+
 ## Repos
 
 | Repo | What it is |
 |---|---|
 | [server](https://github.com/tgram-analytics/server) | FastAPI backend + Telegram bot — deploy this |
 | [tgram-analytics-js](https://github.com/tgram-analytics/tgram-analytics-js) | JS/TS SDK — `<script>` tag or npm, for websites and SPAs |
+| [tgram-analytics-flutter](https://github.com/tgram-analytics/tgram-analytics-flutter) | Dart/Flutter SDK — singleton with pre-init buffering |
 | [tgram-analytics-py](https://github.com/tgram-analytics/tgram-analytics-py) | Python SDK — sync + async, for backends and APIs |
-| [tgram-analytics-flutter](https://github.com/tgram-analytics/tgram-analytics-flutter) | Flutter SDK |
 
 ---
 
