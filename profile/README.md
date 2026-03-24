@@ -20,6 +20,7 @@ flowchart LR
     subgraph Sources["📡 Data Sources"]
         A["🌐 Website"]
         B["📱 App"]
+        C["🖥️ Backend / API"]
     end
     subgraph SDKs["📦 Client Libraries"]
         JS["tgram-analytics-js"]
@@ -30,8 +31,8 @@ flowchart LR
     T["🤖 Telegram Bot"]
     U["😎 You"]
     A --> JS
-    A --> PY
     B --> SW
+    C --> PY
     JS -- "track · pageview" --> S
     PY -- "track · pageview" --> S
     SW -- "track · pageview" --> S
