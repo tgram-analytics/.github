@@ -51,9 +51,34 @@ Everything runs on your infrastructure. Your data never leaves.
 **2. Add your project** — open Telegram, type `/add myapp.com`.
 The bot gives you an API key.
 
-**3. Drop in the tracker** — one `<script>` tag for websites, one pip/npm package for your backend or app.
+**3. Drop in the tracker** — use one SDK or several, depending on what you're building.
 
 **4. Ask your bot** — `/report signup` sends you a chart. Right there in Telegram.
+
+---
+
+## Pick your SDK
+
+Use whichever clients fit your stack. Mix and match — all events land in the same project.
+
+**Just a website?**
+```html
+<!-- one script tag, done -->
+<script src="dist/tga.min.js"></script>
+<script>TGA.init("proj_xxx", { serverUrl: "https://your-server.com" });</script>
+```
+Pageviews and SPA navigation tracked automatically.
+
+**Python backend only?**
+```python
+from tgram_analytics import TGA
+
+tga = TGA("proj_xxx", "https://your-server.com")
+tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"})
+```
+Track server-side events like payments, signups, or job completions.
+
+**Full-stack app?** Use both — JS SDK on the frontend for pageviews and clicks, Python SDK on the backend for purchases and background jobs. All events flow into the same project and show up in the same `/report`.
 
 ---
 
