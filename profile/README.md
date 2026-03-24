@@ -50,7 +50,7 @@ Everything runs on your infrastructure. Your data never leaves.
 **2. Add your project** — open Telegram, type `/add myapp.com`.
 The bot gives you an API key.
 
-**3. Drop in the tracker** — one `<script>` tag for websites, one package for Flutter.
+**3. Drop in the tracker** — one `<script>` tag for websites, one pip/npm package for your backend or app.
 
 **4. Ask your bot** — `/report signup` sends you a chart. Right there in Telegram.
 
@@ -70,7 +70,8 @@ The bot gives you an API key.
 | Repo | What it is |
 |---|---|
 | [server](https://github.com/tgram-analytics/server) | FastAPI backend + Telegram bot — deploy this |
-| [tgram-analytics-js](https://github.com/tgram-analytics/tgram-analytics-js) | `<script>` tracker for websites |
+| [tgram-analytics-js](https://github.com/tgram-analytics/tgram-analytics-js) | JS/TS SDK — `<script>` tag or npm, for websites and SPAs |
+| [tgram-analytics-py](https://github.com/tgram-analytics/tgram-analytics-py) | Python SDK — sync + async, for backends and APIs |
 | [tgram-analytics-flutter](https://github.com/tgram-analytics/tgram-analytics-flutter) | Flutter SDK |
 
 ---
