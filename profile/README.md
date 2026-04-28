@@ -5,7 +5,7 @@
 
 ---
 
-**Website analytics delivered to your Telegram chat.**
+**Software analytics delivered to your Telegram chat.**
 
 No dashboard to log into. No new tool to learn. No data leaving your server.
 Your Telegram bot tells you what's happening with your website or app — signups,
@@ -45,8 +45,7 @@ flowchart LR
     style U fill:#333,stroke:#555,color:#fff
 ```
 
-**1. Deploy the server once** — on a VPS, Railway, Fly.io, wherever you like.
-Everything runs on your infrastructure. Your data never leaves.
+**1. Open @MyTelegramAnalyticsBot or self-host the server** — Easy and fits your needs.
 
 **2. Add your project** — open Telegram, type `/add myapp.com`.
 The bot gives you an API key.
@@ -100,38 +99,6 @@ tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"}
 
 ---
 
-## Pick your SDK
-
-Use whichever clients fit your stack. Mix and match — all events land in the same project.
-
-**Just a website?**
-```html
-<!-- one script tag, done -->
-<script src="dist/tga.min.js"></script>
-<script>TGA.init("proj_xxx", { serverUrl: "https://your-server.com" });</script>
-```
-Pageviews and SPA navigation tracked automatically.
-
-**Flutter / Dart app?**
-```dart
-// Track anywhere — even before init:
-TGA.track('signup', sessionId);
-
-// In main():
-TGA.init('proj_xxx', 'https://your-server.com');
-// ^ buffered events flush automatically
-```
-
-**Python backend?**
-```python
-from tgram_analytics import TGA
-
-tga = TGA("proj_xxx", "https://your-server.com")
-tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"})
-```
-
----
-
 ## Repos
 
 | Repo | What it is |
@@ -141,11 +108,13 @@ tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"}
 | [tgram-analytics-flutter](https://github.com/tgram-analytics/tgram-analytics-flutter) | Dart/Flutter SDK — singleton with pre-init buffering |
 | [tgram-analytics-py](https://github.com/tgram-analytics/tgram-analytics-py) | Python SDK — sync + async, for backends and APIs |
 
+Explore the org for more!
+
 ---
 
 ## Why not Google Analytics?
 
-| | tgram-analytics | Google Analytics / Amplitude |
+| | tgram-analytics self-hosted | Google Analytics / Amplitude |
 |---|---|---|
 | Login required | ❌ It's in Telegram | ✅ |
 | Your server, your data | ✅ | ❌ |
@@ -156,4 +125,4 @@ tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"}
 
 ---
 
-*Self-hosted. Open source. No dashboards. Just Telegram.*
+* Open source. No dashboards. Just Telegram.*
