@@ -9,7 +9,7 @@
 
 No dashboard to log into. No new tool to learn.
 Your Telegram bot tells you what's happening with your website or app — signups,
-purchases, errors — whenever you ask, or automatically on a schedule.
+purchases, errors — whenever you ask, and alerts you the moment key events fire.
 
 **Try it now:** message [@MyTelegramAnalyticsBot](https://t.me/MyTelegramAnalyticsBot) (1 project free — see [tgram-analytics.com](https://tgram-analytics.com)), or [self-host the server](https://github.com/tgram-analytics/server) and no data ever leaves your infrastructure.
 
@@ -96,7 +96,7 @@ tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"}
 
 - 📊 `/report <event>` — chart any event across any time range
 - 🔔 Alerts — *"tell me every time someone makes a purchase"*
-- 📅 Scheduled reports — *"every Monday, send me last week's signups"*
+- 📅 `/digest` — a 7-day recap with week-over-week deltas, whenever you ask
 - 🔑 Multi-project — one bot, many projects
 
 ---
