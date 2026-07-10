@@ -1,15 +1,17 @@
 # tgram-analytics
 
-> ⚠️ Independent open-source project. Not affiliated with, endorsed by, or connected
+> ⚠️ Independent project. Not affiliated with, endorsed by, or connected
 > to Telegram Messenger LLP in any way. "Telegram" is a trademark of Telegram Messenger LLP.
 
 ---
 
 **Software analytics delivered to your Telegram chat.**
 
-No dashboard to log into. No new tool to learn. No data leaving your server.
+No dashboard to log into. No new tool to learn.
 Your Telegram bot tells you what's happening with your website or app — signups,
 purchases, errors — whenever you ask, or automatically on a schedule.
+
+**Try it now:** message [@MyTelegramAnalyticsBot](https://t.me/MyTelegramAnalyticsBot) (1 project free — see [tgram-analytics.com](https://tgram-analytics.com)), or [self-host the server](https://github.com/tgram-analytics/server) and no data ever leaves your infrastructure.
 
 ---
 
@@ -45,7 +47,7 @@ flowchart LR
     style U fill:#333,stroke:#555,color:#fff
 ```
 
-**1. Open @MyTelegramAnalyticsBot or self-host the server** — Easy and fits your needs.
+**1. Open [@MyTelegramAnalyticsBot](https://t.me/MyTelegramAnalyticsBot) or [self-host the server](https://github.com/tgram-analytics/server)** — hosted for zero setup, self-hosted so your data stays on your infrastructure.
 
 **2. Add your project** — open Telegram, type `/add myapp.com`.
 The bot gives you an API key.
@@ -63,7 +65,7 @@ Use whichever clients fit your stack. Mix and match — all events land in the s
 **Just a website?**
 ```html
 <!-- one script tag, done -->
-<script src="dist/tga.min.js"></script>
+<script src="https://your-server.com/sdk/tga.min.js"></script>
 <script>TGA.init("proj_xxx", { serverUrl: "https://your-server.com" });</script>
 ```
 Pageviews and SPA navigation tracked automatically.
@@ -108,7 +110,7 @@ tga.track("subscription_created", session_id=user.id, properties={"plan": "pro"}
 | [tgram-analytics-flutter](https://github.com/tgram-analytics/tgram-analytics-flutter) | Dart/Flutter SDK — singleton with pre-init buffering |
 | [tgram-analytics-py](https://github.com/tgram-analytics/tgram-analytics-py) | Python SDK — sync + async, for backends and APIs |
 
-Explore the org for more!
+SDKs are MIT-licensed; the server is source-available under FSL-1.1. Explore the org for more!
 
 ---
 
@@ -125,4 +127,4 @@ Explore the org for more!
 
 ---
 
-* Open source. No dashboards. Just Telegram.*
+*Hosted or self-hosted. MIT SDKs, source-available server. No dashboards. Just Telegram.*
